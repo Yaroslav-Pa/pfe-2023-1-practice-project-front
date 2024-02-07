@@ -1,7 +1,67 @@
-const env = process.env.NODE_ENV || 'development'
-const serverIP = 'localhost'
-const serverPort = 5000
+const env = process.env.NODE_ENV || 'development';
+const serverIP = 'localhost';
+const serverPort = 5000;
 export default {
+  SECTION_LIST: [
+    {
+      menuName: 'Name ideas',
+      list: [
+        { name: 'Beauty', url: 'http://www.google.com' },
+        { name: 'Consulting', url: 'http://www.google.com' },
+        { name: 'E-Commerce', url: 'http://www.google.com' },
+        { name: 'Fashion & Clothing', url: 'http://www.google.com' },
+        { name: 'Finance', url: 'http://www.google.com' },
+        { name: 'Real Estate', url: 'http://www.google.com' },
+        { name: 'Tech', url: 'http://www.google.com' },
+        { name: 'More Categories', url: 'http://www.google.com' },
+      ],
+    },
+    {
+      menuName: 'CONTESTS',
+      list: [
+        { name: 'How it works', url: 'http://www.google.com' },
+        { name: 'Pricing', url: 'http://www.google.com' },
+        { name: 'Agency service', url: 'http://www.google.com' },
+        { name: 'Active contests', url: 'http://www.google.com' },
+        { name: 'Winners', url: 'http://www.google.com' },
+        { name: 'Leaderboard', url: 'http://www.google.com' },
+        { name: 'Become a creative', url: 'http://www.google.com' },
+      ],
+    },
+    {
+      menuName: 'Our Work',
+      list: [
+        { name: 'names', url: 'http://www.google.com' },
+        { name: 'taglines', url: 'http://www.google.com' },
+        { name: 'logos', url: 'http://www.google.com' },
+        { name: 'testimonials', url: 'http://www.google.com' },
+      ],
+    },
+    {
+      menuName: 'Names For Sale',
+      list: [
+        { name: 'popular names', url: 'http://www.google.com' },
+        { name: 'short names', url: 'http://www.google.com' },
+        { name: 'intriguing names', url: 'http://www.google.com' },
+        { name: 'names by category', url: 'http://www.google.com' },
+        { name: 'visual name search', url: 'http://www.google.com' },
+        { name: 'sell your domains', url: 'http://www.google.com' },
+      ],
+    },
+    {
+      menuName: 'Blog',
+      list: [
+        { name: 'ultimate naming guide', url: 'http://www.google.com' },
+        {
+          name: 'poetic devices in business naming',
+          url: 'http://www.google.com',
+        },
+        { name: 'ultimate naming guide', url: 'http://www.google.com' },
+        { name: 'crowded bar theory', url: 'http://www.google.com' },
+        { name: 'all articles', url: 'http://www.google.com' },
+      ],
+    },
+  ],
   CUSTOMER: 'customer',
   CREATOR: 'creator',
   CONTEST_STATUS_ACTIVE: 'active',
@@ -39,12 +99,12 @@ export default {
     'a Business',
     'an App',
     'a Product',
-    'a Startup'
+    'a Startup',
   ],
   FooterItems: [
     {
       title: 'SQUADHELP',
-      items: ['About', 'Contact', 'How It Works?', 'Testimonials', 'Our Work']
+      items: ['About', 'Contact', 'How It Works?', 'Testimonials', 'Our Work'],
     },
     {
       title: 'RESOURCES',
@@ -56,8 +116,8 @@ export default {
         'Blog',
         'Download eBook',
         'Pricing',
-        'Help & FAQs'
-      ]
+        'Help & FAQs',
+      ],
     },
     {
       title: 'OUR SERVICES',
@@ -69,12 +129,12 @@ export default {
         'Creative Owned Names For Sale',
         'Audience Testing',
         'Trademark Research & Filling',
-        'Managed Agency Service'
-      ]
+        'Managed Agency Service',
+      ],
     },
     {
       title: 'LEGAL',
-      items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy']
-    }
-  ]
-}
+      items: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'],
+    },
+  ],
+};
