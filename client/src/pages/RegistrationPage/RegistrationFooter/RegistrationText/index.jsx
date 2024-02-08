@@ -1,4 +1,4 @@
-import styles from '../RegistrationPage.module.sass';
+import styles from '../../RegistrationPage.module.sass';
 
 function RegistrationText({ theme, text }) {
   return (
