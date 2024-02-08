@@ -6,6 +6,7 @@ import RegistrationForm from '../../components/RegistrationForm/RegistrationForm
 import styles from './RegistrationPage.module.sass';
 import { clearErrorSignUpAndLogin } from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
+import HeaderSignUp from '../../components/HeaderSignUp';
 
 const RegistrationPage = (props) => {
   props.clearError();
@@ -13,14 +14,7 @@ const RegistrationPage = (props) => {
   return (
     <div className={styles.signUpPage}>
       <div className={styles.signUpContainer}>
-        <div className={styles.headerSignUpPage}>
-          <Logo src={`${CONSTANTS.STATIC_IMAGES_PATH}logo.png`} />
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            <div className={styles.linkLoginContainer}>
-              <span>Login</span>
-            </div>
-          </Link>
-        </div>
+        <HeaderSignUp text="Login" toLink="/login" />
         <RegistrationForm history={props.history} />
       </div>
       <div className={styles.footer}>

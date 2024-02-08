@@ -6,18 +6,12 @@ import Logo from '../../components/Logo';
 import styles from './LoginPage.module.sass';
 import { clearErrorSignUpAndLogin } from '../../actions/actionCreator';
 import CONSTANTS from '../../constants';
+import HeaderSignUp from '../../components/HeaderSignUp';
 
 const LoginPage = (props) => (
   <div className={styles.mainContainer}>
     <div className={styles.loginContainer}>
-      <div className={styles.headerSignUpPage}>
-        <Logo src={`${CONSTANTS.STATIC_IMAGES_PATH}logo.png`} alt="logo" />
-        <Link to="/registration" style={{ textDecoration: 'none' }}>
-          <div className={styles.linkLoginContainer}>
-            <span>Signup</span>
-          </div>
-        </Link>
-      </div>
+      <HeaderSignUp text="Signup" toLink="/registration" />
       <div className={styles.loginFormContainer}>
         <LoginForm history={props.history} />
       </div>
