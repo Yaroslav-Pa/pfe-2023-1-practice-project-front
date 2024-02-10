@@ -2,6 +2,9 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import PricingColumn from '../../components/PricingColumn/PricingColumn';
 import styles from './PricingPage.module.sass';
+import CONSTANTS from '../../constants';
+const { PRICING_COLUMNS } = CONSTANTS;
+
 function PricingPage() {
   return (
     <>
@@ -18,16 +21,21 @@ function PricingPage() {
           </div>
         </section>
         <div className={styles.containerPricingArea}>
-          <section className={styles.pricingArea}>
-            <PricingColumn
-              headColor='rgb(101, 101, 101)'
-              headerBlock={[
-                'Platinum',
-                'Work with top-level creatives, plus agency-style brand validation',
-                '749',
-              ]}
-            />
-          </section>
+            {PRICING_COLUMNS.map(
+              ({
+                headColor,
+                headerBlock,
+                infoAboutPack = [],
+                infoText = '',
+              }) => (
+                <PricingColumn
+                  headColor={headColor}
+                  headerBlock={headerBlock}
+                  infoAboutPack={infoAboutPack}
+                  infoText={infoText}
+                />
+              )
+            )}
         </div>
       </main>
       <Footer />

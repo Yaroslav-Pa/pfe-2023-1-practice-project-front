@@ -2,9 +2,24 @@ import styles from './PricingColumn.module.sass';
 import { Link } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 
-function PricingColumn({ headColor, headerBlock, pack, infoText}) {
+function PricingColumn({
+  headColor,
+  headerBlock,
+  infoAboutPack = [],
+  infoText = '',
+}) {
   const [blockH1, blockText, blockPrice] = headerBlock;
-  const [prizeToWinner, listUpgrades, entries, isRefund] = pack;
+  const [prizeToWinner, listedUpgrades, entries, isRefund] = infoAboutPack;
+
+  const upgradeTextList = listedUpgrades?.textList.map((text) => (
+    <li className={styles.infoListText}>
+      <FaCheck /> {text}
+    </li>
+  ));
+  const slisedTextList = infoText
+    .split('.')
+    .map((text) => <p className={styles.slisedInfoText}>{text}</p>);
+
   return (
     <article className={styles.articleContainer}>
       <div
@@ -17,32 +32,37 @@ function PricingColumn({ headColor, headerBlock, pack, infoText}) {
         <p className={styles.headerText}>{blockText}</p>
         <p className={styles.priceBlock}>US${blockPrice}</p>
       </div>
-      <div className={styles.infoText}>
-        {pack && <div>
-          <p>Prize to Winer - ${prizeToWinner} (Included)</p>
-          <div>
-            <h2>Validation Services & Upgrades ({listUpgrades.value} value)</h2>
-            <ul>
-              {listUpgrades.map(({ text }) => (
-                <li>
-                  <FaCheck /> {text}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p>Expected {entries}+ Entries</p>
-          {isRefund && <p>Partial Refund Option</p>}
-        </div>}
-        {/* TODO можливо потім зробити щоб воно по . слайсило та потім розтавляло */}
-        {infoText && <p>{infoText}</p>}
-
-        <Link
-          className={styles.pseudoButton}
-          style={{ backgroundColor: `${headColor}` }}
-        >
-          <FaCheck /> Start
-        </Link>
+      <div className={styles.infoPackContainer}>
+        {!infoText && (
+          <>
+            <p className={styles.packPrizeText}>
+              Prize to Winer - ${prizeToWinner} (Included)
+            </p>
+            <div className={styles.packUpgradesContainer}>
+              <h2>
+                Validation Services & Upgrades (${listedUpgrades?.upgradesValue}{' '}
+                value)
+              </h2>
+              <ul className={styles.packListedUpgrades}>{upgradeTextList}</ul>
+            </div>
+            <p className={styles.packExpectedText}>
+              Expected {entries}+ Entries
+            </p>
+            {isRefund && (
+              <p className={styles.packRefundText}>Partial Refund Option</p>
+            )}
+          </>
+        )}
+        {infoText && (
+          <div className={styles.infoTextContainer}>{slisedTextList}</div>
+        )}
       </div>
+      <Link
+        className={styles.pseudoButton}
+        style={{ backgroundColor: `${headColor}` }}
+      >
+        <FaCheck /> Start
+      </Link>
     </article>
   );
 }

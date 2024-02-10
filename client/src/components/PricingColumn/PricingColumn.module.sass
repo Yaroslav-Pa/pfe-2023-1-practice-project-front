@@ -1,49 +1,88 @@
-.articleContainer
-  max-width: 260px
-  font-family: 'Raleway',sans-serif
-  font-size: 33px
-  font-weight: 700
-  color: rgb(101, 101, 101)
+
+$customGrey: rgb(101, 101, 101)
+$customWhite: rgb(230, 230, 230)
+
+@mixin flex($flexD:row, $justify:start, $align:start, $gap:15px)
   display: flex
-  flex-direction: column
-  gap: 15px
+  flex-direction: $flexD
+  justify-content: $justify
+  align-items: $align
+  gap: $gap
+
+@mixin font($size: 15px, $weight: 500, $height: $size)
+  font-size: $size
+  font-weight: $weight
+  line-height: $height
+  text-decoration: none
+
+@mixin borderWhite()
+  border-bottom: 2px $customWhite solid
+
+.articleContainer
+  @include flex($flexD:column)
+  font-family: 'Raleway',sans-serif
+  max-width: 260px
+  color: $customGrey
 
 .colorBlock
-  display: flex
-  flex-direction: column
-  gap: 10px
-  justify-content: center
+  @include flex($flexD:column, $gap:10px)
+  background-color: white
   position: relative
   border: 10px solid
   padding: 16px
+  min-width: 100%
+  min-height: 215px
+
+.headerH1
+  @include font($size: 33px, $weight: 700)
 
 .headerText
-  line-height: 26px
-  font-weight: 500
-  font-size: 16.5px
+  @include font($size: 16.5px, $height: 26px)
 
 .priceBlock
+  position: absolute
+  right: 20px
+  bottom: 15px
+  @include font($size: 28px, $weight: 600)
   text-align: right
-  font-weight: 600
-  font-size: 28px
 
-.infoText
-  display: flex
-  flex-direction: column
+.infoPackContainer
+  @include flex($flexD:column, $align: stretch, $gap:0)
+  @include font($size: 15.5px, $height:26px)
+
+.packPrizeText
+  @include borderWhite
+  padding-bottom: 10px
+
+.packUpgradesContainer
+  @include flex($flexD:column, $gap:15px)
+  @include borderWhite
+  padding: 10px 0
+
+.packExpectedText
+  padding: 10px 0
+
+.packRefundText
+  border-top: 2px $customWhite solid
+  padding-top: 10px
+
+.packListedUpgrades
+  @include flex($flexD:column, $gap:13px)
+
+.infoTextContainer
+  @include flex($flexD:column, $gap:10px)
+
+.infoListText
+  @include font($size: 14px, $height:18px)
+  margin-left: 20px
 
 .pseudoButton
-  display: flex
-  justify-content: center
-  align-items: center
-  gap: 5px
+  @include flex($flexD:row, $justify:center, $align:center, $gap:5px)
+  @include font($size: 17px,$weight:700, $height:18px)
   height: 45px
   width: 100%
   text-align: center
-  font-weight: 700
-  font-size: 17px
-  text-decoration: none
   color: white
   padding: 7px 0
   border-radius: 10px
   background-color: black
-  vertical-align: middle

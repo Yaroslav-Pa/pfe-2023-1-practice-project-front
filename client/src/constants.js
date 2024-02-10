@@ -2,6 +2,87 @@ const env = process.env.NODE_ENV || 'development';
 const serverIP = 'localhost';
 const serverPort = 5000;
 export default {
+  PRICING_COLUMNS: [
+    {
+      headColor: 'rgb(226, 186,151)',
+      headerBlock: [
+        'Bronze',
+        'Branding on a budget',
+        '229',
+      ],
+      infoAboutPack: [
+        '135',
+        {
+          upgradesValue: '39',
+          textList: [
+            'Matching .com URL',
+            'Matching .com URL',
+          ],
+        },
+        '300',
+      ],
+    },
+    {
+      headColor: 'rgb(233, 191,100)',
+      headerBlock: [
+        'Gold',
+        'Increase participation and basic brand validation',
+        '449',
+      ],
+      infoAboutPack: [
+        '200',
+        {
+          upgradesValue: '305',
+          textList: [
+            'Matching .com URL',
+            'Instant Trademark Check (4 Databases)',
+            'NDA and More Privacy',
+            'Project Promotion (Basic)',
+            'Comprehensive Trademark Research',
+          ],
+        },
+        '600',
+        true,
+      ],
+    },
+    {
+      headColor: 'rgb(101, 101, 101)',
+      headerBlock: [
+        'Platinum',
+        'Work with top-level creatives, plus agency-style brand validation',
+        '749',
+      ],
+      infoAboutPack: [
+        '300',
+        {
+          upgradesValue: '979',
+          textList: [
+            'Audience Testing (Up to 6 Names) View Sample Report',
+            'Comprehensive Trademark Research (3 Names)',
+            'Linguistics Analysis (3 Names)',
+            'Tier A Creatives',
+            'Matching .com URL',
+            'Instant Trademark Check (4 Databases)',
+            'NDA and More Privacy',
+            ' Enhanced Project Promotion',
+            'Team Collaboration Tools',
+          ],
+        },
+        '1000',
+        true,
+      ],
+    },
+    {
+      headColor: 'rgb(60, 213,212)',
+      headerBlock: [
+        'Managed',
+        'A full agency experience without the agency price tag',
+        '1499',
+      ],
+      infoAboutPack:[],
+      infoText:'Receive optimum results from your Platinum Contest by launching a Managed Contest Package and working one-on-one with an experienced Squadhelp Branding Consultant. With significantly more validation services, professional brief creation, and daily management of your contest by your Branding Expert, you`ll receive an enhanced branding experience to closeout your branding project. Learn More about Managed Contest Service'
+    },
+  ],
   REGISTER_TEXT: [
     {
       theme: 'Why should I use Squadhelp?',
