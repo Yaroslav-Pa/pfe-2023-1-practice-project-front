@@ -33,7 +33,7 @@ function PricingColumn({
         <p className={styles.priceBlock}>US${blockPrice}</p>
       </div>
       <div className={styles.infoPackContainer}>
-        {!infoText && (
+        {listedUpgrades && !infoText && (
           <>
             <p className={styles.packPrizeText}>
               Prize to Winer - ${prizeToWinner} (Included)

@@ -1,31 +1,14 @@
-
-$customGrey: rgb(101, 101, 101)
-$customWhite: rgb(230, 230, 230)
-
-@mixin flex($flexD:row, $justify:start, $align:start, $gap:15px)
-  display: flex
-  flex-direction: $flexD
-  justify-content: $justify
-  align-items: $align
-  gap: $gap
-
-@mixin font($size: 15px, $weight: 500, $height: $size)
-  font-size: $size
-  font-weight: $weight
-  line-height: $height
-  text-decoration: none
-
-@mixin borderWhite()
-  border-bottom: 2px $customWhite solid
+@use '../../sass/mixin'
+@use '../../sass/variables'
 
 .articleContainer
-  @include flex($flexD:column)
+  @include mixin.flex($flexD:column)
   font-family: 'Raleway',sans-serif
   max-width: 260px
-  color: $customGrey
+  color: variables.$customGrey
 
 .colorBlock
-  @include flex($flexD:column, $gap:10px)
+  @include mixin.flex($flexD:column, $gap:10px)
   background-color: white
   position: relative
   border: 10px solid
@@ -34,51 +17,51 @@ $customWhite: rgb(230, 230, 230)
   min-height: 215px
 
 .headerH1
-  @include font($size: 33px, $weight: 700)
+  @include mixin.font($size: 33px, $weight: 700)
 
 .headerText
-  @include font($size: 16.5px, $height: 26px)
+  @include mixin.font($size: 16.5px, $height: 26px)
 
 .priceBlock
   position: absolute
   right: 20px
   bottom: 15px
-  @include font($size: 28px, $weight: 600)
+  @include mixin.font($size: 28px, $weight: 600)
   text-align: right
 
 .infoPackContainer
-  @include flex($flexD:column, $align: stretch, $gap:0)
-  @include font($size: 15.5px, $height:26px)
+  @include mixin.flex($flexD:column, $align: stretch, $gap:0)
+  @include mixin.font($size: 15.5px, $height:26px)
 
 .packPrizeText
-  @include borderWhite
+  @include mixin.borderWhite
   padding-bottom: 10px
 
 .packUpgradesContainer
-  @include flex($flexD:column, $gap:15px)
-  @include borderWhite
+  @include mixin.flex($flexD:column, $gap:15px)
+  @include mixin.borderWhite
   padding: 10px 0
 
 .packExpectedText
   padding: 10px 0
 
 .packRefundText
-  border-top: 2px $customWhite solid
+  border-top: 2px variables.$customWhite solid
   padding-top: 10px
 
 .packListedUpgrades
-  @include flex($flexD:column, $gap:13px)
+  @include mixin.flex($flexD:column, $gap:13px)
 
 .infoTextContainer
-  @include flex($flexD:column, $gap:10px)
+  @include mixin.flex($flexD:column, $gap:10px)
 
 .infoListText
-  @include font($size: 14px, $height:18px)
+  @include mixin.font($size: 14px, $height:18px)
   margin-left: 20px
 
 .pseudoButton
-  @include flex($flexD:row, $justify:center, $align:center, $gap:5px)
-  @include font($size: 17px,$weight:700, $height:18px)
+  @include mixin.flex($flexD:row, $justify:center, $align:center, $gap:5px)
+  @include mixin.font($size: 17px,$weight:700, $height:18px)
   height: 45px
   width: 100%
   text-align: center

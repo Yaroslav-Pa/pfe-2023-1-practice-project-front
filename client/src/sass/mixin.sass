@@ -1,0 +1,17 @@
+@use './variables'
+
+@mixin flex($flexD:row, $justify:start, $align:start, $gap:15px)
+  display: flex
+  flex-direction: $flexD
+  justify-content: $justify
+  align-items: $align
+  gap: $gap
+
+@mixin font($size: 15px, $weight: 500, $height: $size)
+  font-size: $size
+  font-weight: $weight
+  line-height: $height
+  text-decoration: none
+
+@mixin borderWhite()
+  border-bottom: 2px variables.$customWhite solid
